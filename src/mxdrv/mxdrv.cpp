@@ -2787,7 +2787,7 @@ L00040e:;
 														move.b  (a2)+,(a1)+
 */
 	D6 &= 0x00000001;
-	if ( D1 == 0 ) goto L000416;
+	if ( D6 == 0 ) goto L000416;
 #if MXDRV_ENABLE_PORTABLE_CODE
 	*TO_PTR(A1++) = *TO_PTR(A2++);
 #else
@@ -2850,7 +2850,7 @@ L00042c:;
 														swap.w  d5
 */
 
-//L000440:;
+L000440:;
 /*
 														move.l  (a0),d0
 														beq     L000446
@@ -2873,9 +2873,7 @@ L000446:;
 #else
 	A0 = (UBYTE *)(((ULONG *)A0)+2);
 #endif
-	if ( (D2--) > 0 ) goto L000426;
-	D5 >>= 3;
-	D5--;
+	if ( (D5--) > 0 ) goto L000440;
 	D0 = (ULONG)A1;
 
 L000454:;
