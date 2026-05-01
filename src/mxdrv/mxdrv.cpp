@@ -2330,7 +2330,7 @@ L0002ac:;
 	if ( (D0--) != 0 ) goto L0002ac;
 	D2 &= 0xffff0001;
 	if ( (D2 & 0xffff) == 0 ) goto L0002c0;
-	a1_w = (UWORD *)a1_l; a2_w = (UWORD *)a1_l; *(--a1_w) = *(--a2_w); a1_l = (ULONG *)a1_w; a2_l = (ULONG *)a2_w;
+	a1_w = (UWORD *)a1_l; a2_w = (UWORD *)a2_l; *(--a1_w) = *(--a2_w); a1_l = (ULONG *)a1_w; a2_l = (ULONG *)a2_w;
 #if MXDRV_ENABLE_PORTABLE_CODE
 	A2 = TO_OFS(a2_l);
 #else
