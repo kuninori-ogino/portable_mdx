@@ -8766,7 +8766,7 @@ static void L001498(
 														st.b    $00(a0,d0.w)
 														cmp.w   #$0009,d0
 														bcc     L0014ae
-														st.b    $27(a5,d0.w)	; L002233(d7.w)
+														st.b    $27(a5,d0.w)	; L002233(d0.w)
 */
 #if MXDRV_ENABLE_PORTABLE_CODE
 	D0 = *TO_PTR(A4++);
@@ -8778,7 +8778,7 @@ static void L001498(
 	A0[D0] = SET;
 #endif
 	if ( D0 >= 0x0009 ) goto L0014ae;
-	G.L002233[D7] = SET;
+	G.L002233[D0] = SET;
 
 L0014ae:;
 /*
