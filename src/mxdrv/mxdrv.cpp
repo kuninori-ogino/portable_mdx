@@ -2257,7 +2257,7 @@ static void L_1B(
 	L000216();
 #endif
 	D2 = D0;
-	if ( (SLONG)d2 < 0 ) goto L0002e4;
+	if ( (SLONG)D2 < 0 ) goto L0002e4;
 	D5 = D0;
 	D0 <<= 3;
 	D3 = 0x60;
@@ -2285,7 +2285,7 @@ L00027e:;
 														swap.w  d0
 */
 	D2 -= D3;
-	if ( (SLONG)d2 >= 0 ) goto L00027e;
+	if ( (SLONG)D2 >= 0 ) goto L00027e;
 	D2 += D3;
 	if ( D2 == 0 ) goto L0002e4;
 	D3 -= D2;
