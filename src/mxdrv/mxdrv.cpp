@@ -5174,8 +5174,8 @@ L000b6c:;
 														beq     L000b9c
 */
 	if ( (!KEY.XF4) && (!KEY.XF5) ) goto L000b82;
-	if ( KEY.XF4 ) goto L000bae;
-	if ( KEY.XF5 ) goto L000b9c;
+	if ( KEY.XF5 ) goto L000bae;
+	if ( KEY.XF4 ) goto L000b9c;
 
 L000b82:;
 /*
