@@ -1071,7 +1071,9 @@ static void PCM8_SUB(
 	  case 0x0000:
 #if MXDRV_ENABLE_PORTABLE_CODE
 		X68Sound_Pcm8_Out( &context->m_impl->m_x68SoundContext, D0&0xff, TO_PTR(A1), D1, D2 );
-		context->m_impl->m_logicalSumOfKeyOnFlagsForPcm[D0&7] = true;
+		if ( D2 > 0 && (D1 & 3) != 0 ) {
+			context->m_impl->m_logicalSumOfKeyOnFlagsForPcm[D0&7] = true;
+		}
 #else
 		X68Sound_Pcm8_Out( D0&0xff, (void *)A1, D1, D2 );
 #endif
@@ -1081,7 +1083,6 @@ static void PCM8_SUB(
 		  case 0x0100:
 #if MXDRV_ENABLE_PORTABLE_CODE
 			X68Sound_Pcm8_Out( &context->m_impl->m_x68SoundContext, D0&0xff, 0, 0, 0 );
-			context->m_impl->m_logicalSumOfKeyOnFlagsForPcm[D0&7] = true;
 #else
 			X68Sound_Pcm8_Out( D0&0xff, 0, 0, 0 );
 #endif
@@ -1151,7 +1152,9 @@ static void ADPCMOUT(
 	} else {
 //		printf("invalid A1 %08X\n", A1);
 	}
-	context->m_impl->m_logicalSumOfKeyOnFlagsForPcm[0] = true;
+	if ( D2 > 0 ) {
+		context->m_impl->m_logicalSumOfKeyOnFlagsForPcm[0] = true;
+	}
 #else
 	_iocs_adpcmout( (void *)A1, D1, D2 );
 #endif
