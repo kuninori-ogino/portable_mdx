@@ -1609,7 +1609,7 @@ static void L_14(
 	void
 #endif
 ) {
-	D0 = ~G.L001e06;
+	D0 = (UWORD)~G.L001e06;
 }
 
 
