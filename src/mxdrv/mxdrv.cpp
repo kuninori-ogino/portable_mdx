@@ -2413,7 +2413,7 @@ L0002e4:;
 														movem.l (sp)+,d1-d5/a0-a2
 														rts
 */
-	D1 = D0;
+	D0 = D1;
 	D1=d1, D2=d2, D3=d3, D4=d4, D5=d5, A0=a0, A1=a1, A2=a2;
 
 }
@@ -2747,7 +2747,7 @@ L0003ea:;
 #endif
 	D6 -= D4;
 	D1 = D6;
-	D2 >>= 2;
+	D1 >>= 2;
 	D1 --;
 #if MXDRV_ENABLE_PORTABLE_CODE
 	a2_l = (ULONG volatile *)TO_PTR(A2); a1_l = (ULONG volatile *)TO_PTR(A1);
